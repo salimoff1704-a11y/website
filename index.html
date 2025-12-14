@@ -1,0 +1,231 @@
+<!DOCTYPE html>
+<html lang="uz">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Muhammad aka choyxonasi</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="https://unpkg.com/leaflet@1.9.4/dist/leaflet.css" />
+  <link rel="stylesheet" href="style.css">
+</head>
+<body>
+  <div class="page">
+    <header class="topbar">
+      <div class="brand">
+        <div class="logo">MA</div>
+        <div>
+          <div class="brand-name" data-i18n="brand">Muhammad aka choyxonasi</div>
+          <div class="brand-tag" data-i18n="tagline">Mazali – Halol – Hamyonbop</div>
+        </div>
+      </div>
+      <nav class="nav">
+        <a href="#home" data-i18n="navHome">Bosh sahifa</a>
+        <a href="#menu" data-i18n="navMenu">Menyu</a>
+        <a href="#about" data-i18n="navAbout">Biz haqimizda</a>
+        <a href="#contact" data-i18n="navContact">Aloqa</a>
+      </nav>
+      <div class="actions">
+        <div class="lang-switch">
+          <button class="lang-btn" data-lang="uz">UZ</button>
+          <button class="lang-btn" data-lang="ru">RU</button>
+          <button class="lang-btn" data-lang="en">EN</button>
+        </div>
+        <button class="cart-btn" id="openCart">
+          <span data-i18n="cart">Savat</span>
+          <span class="cart-count" id="cartCount">0</span>
+        </button>
+      </div>
+    </header>
+
+    <section class="hero hero-full" id="home">
+      <div class="hero-overlay"></div>
+      <div class="hero-content">
+        <p class="eyebrow" data-i18n="heroEyebrow">Muhammad aka choyxonasi</p>
+        <h1 data-i18n="heroTitle">Mazali – Halol – Hamyonbop</h1>
+        <p class="hero-sub" data-i18n="heroDesc">Shashlik, lag‘mon, osh, manti va yana ko‘plab milliy taomlar — barcha ta’m talablar uchun.</p>
+        <div class="hero-actions">
+          <a class="btn primary" href="#menu" data-i18n="heroMenu">Menyuni ko‘rish</a>
+          <button class="btn ghost" id="heroOrder" data-i18n="heroOrder">Buyurtma berish</button>
+        </div>
+        <div class="badges">
+          <span data-i18n="badgeFresh">Yangi mahsulotlar</span>
+          <span data-i18n="badgeHalal">100% halol go‘sht</span>
+          <span data-i18n="badgeFast">Tez yetkazib berish</span>
+        </div>
+      </div>
+    </section>
+
+    <section class="menu" id="menu">
+      <div class="section-head">
+        <div>
+          <p class="eyebrow" data-i18n="menuEyebrow">Menyu</p>
+          <h2 data-i18n="menuTitle">Taomlarimizni tanlang</h2>
+          <p class="section-sub" data-i18n="menuSub">Shashlik, milliy taomlar, salatlar va ichimliklar — hammasi bir joyda.</p>
+        </div>
+        <div class="filters" id="filters"></div>
+      </div>
+      <div class="cards" id="menuGrid"></div>
+    </section>
+
+    <section class="about" id="about">
+      <div class="about-content">
+        <p class="eyebrow" data-i18n="aboutEyebrow">Biz haqimizda</p>
+        <h2 data-i18n="aboutTitle">Mazali va halol taomlar</h2>
+        <p data-i18n="aboutText">Muhammad aka choyxonasida har bir taom sevgi va mahorat bilan tayyorlanadi. Yangi mahsulotlar, halol go‘sht va an’anaviy retseptlar asosida sizga chinakam ta’m tajribasini taqdim etamiz.</p>
+        <div class="highlights">
+          <div><span>🍢</span><p data-i18n="aboutPoint1">Cho‘g‘da pishirilgan shashliklar</p></div>
+          <div><span>🥘</span><p data-i18n="aboutPoint2">Halol va yangi mahsulotlar</p></div>
+          <div><span>⏱️</span><p data-i18n="aboutPoint3">Tez va qulay xizmat</p></div>
+        </div>
+      </div>
+      <div class="about-visual">
+        <div class="about-card">
+          <img src="./Images/milliy.jpg" alt="Milliy taomlar">
+          <div class="about-note" data-i18n="aboutNote">Milliy taomlarimizdan bahramand bo‘ling</div>
+        </div>
+      </div>
+    </section>
+
+    <section class="contact" id="contact">
+      <div>
+        <p class="eyebrow" data-i18n="contactEyebrow">Aloqa</p>
+        <h2 data-i18n="contactTitle">Biz bilan bog‘laning</h2>
+        <p class="section-sub" data-i18n="contactSub">Telefon orqali buyurtma qiling yoki manzilimizga tashrif buyuring.</p>
+        <div class="contact-list">
+          <div>
+            <span>📞</span>
+            <div>
+              <p data-i18n="phoneLabel">Telefon</p>
+              <a href="tel:+998901234567">+998 93 115 56 46</a>
+            </div>
+          </div>
+          <div>
+            <span>📍</span>
+            <div>
+              <p data-i18n="addressLabel">Manzil</p>
+              <p data-i18n="addressValue">Qashqadaryo viloyati, Ko‘kdala tumani</p>
+            </div>
+          </div>
+          <div>
+            <span>🕒</span>
+            <div>
+              <p data-i18n="hoursLabel">Ish vaqti</p>
+              <p data-i18n="hoursValue">Har kuni 10:00 – 23:00</p>
+            </div>
+          </div>
+        </div>
+      </div>
+      <iframe class="map" loading="lazy" src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d466323.12886581484!2d65.6217!3d38.8421!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x3f4ecab6b7b4b4e3%3A0x9d6a1d85c338337b!2sKo%27kdala%20District%2C%20Qashqadaryo%20Region!5e0!3m2!1sen!2s!4v1700000000001"></iframe>
+    </section>
+
+  </div>
+
+  <aside class="cart-panel" id="cartPanel">
+    <div class="cart-header">
+      <div>
+        <p class="eyebrow" data-i18n="cartTitle">Savat</p>
+        <h3 data-i18n="cartSubtitle">Tanlangan ovqatlar</h3>
+      </div>
+      <button class="icon-btn" id="closeCart">✕</button>
+    </div>
+    <div class="cart-items" id="cartItems"></div>
+    <div class="cart-footer">
+      <div class="total">
+        <span data-i18n="total">Jami</span>
+        <strong id="cartTotal">0 so‘m</strong>
+      </div>
+      <button class="btn primary w-100" id="checkoutBtn" data-i18n="checkout">Buyurtma berish</button>
+    </div>
+  </aside>
+
+  <div class="modal-backdrop" id="orderModal">
+    <div class="modal">
+      <div class="modal-head">
+        <div>
+          <p class="eyebrow" data-i18n="orderTitle">Buyurtma</p>
+          <h3 data-i18n="orderSubtitle">Malumotlarni kiriting</h3>
+        </div>
+        <button class="icon-btn" id="closeModal">✕</button>
+      </div>
+      <form class="order-form" id="orderForm">
+        <div class="form-group">
+          <label data-i18n="nameLabel">Ism</label>
+          <input type="text" id="customerName" required placeholder="Ismingiz">
+        </div>
+        <div class="form-group">
+          <label data-i18n="phoneLabel">Telefon</label>
+          <input type="tel" id="customerPhone" required placeholder="+998">
+        </div>
+        <div class="form-group">
+          <label data-i18n="addressLabel">Joylashuvni belgilang</label>
+          <div id="map" style="height: 300px; border-radius: 12px; margin-top: 8px; border: 1px solid var(--border);"></div>
+          <input type="hidden" id="customerAddress" required>
+          <input type="hidden" id="customerLat" value="">
+          <input type="hidden" id="customerLng" value="">
+          <p class="map-hint" data-i18n="mapHint">Xaritada joylashuvingizni belgilang</p>
+        </div>
+        <div class="order-summary">
+          <div>
+            <p class="eyebrow" data-i18n="orderSummary">Buyurtma tarkibi</p>
+            <div id="orderList"></div>
+          </div>
+          <div class="total">
+            <span data-i18n="total">Jami</span>
+            <strong id="orderTotal">0 so'm</strong>
+          </div>
+        </div>
+        <div class="payment-note">
+          <p data-i18n="paymentNote">⚠️ Buyurtma berishdan oldin to'lov qilishingiz kerak</p>
+        </div>
+        <button class="btn primary w-100" type="button" id="proceedToPayment" data-i18n="proceedToPayment">To'lov qilish</button>
+        <input type="hidden" id="paymentMethod" value="">
+        <input type="hidden" id="paymentProof" value="">
+      </form>
+    </div>
+  </div>
+
+  <div class="modal-backdrop" id="paymentModal">
+    <div class="modal">
+      <div class="modal-head">
+        <div>
+          <p class="eyebrow" data-i18n="paymentTitle">To'lov</p>
+          <h3 data-i18n="paymentSubtitle">To'lov usulini tanlang</h3>
+        </div>
+        <button class="icon-btn" id="closePaymentModal">✕</button>
+      </div>
+      <div class="payment-methods">
+        <button class="payment-btn" id="paymeBtn">
+          <span>💳</span>
+          <div>
+            <strong>Payme</strong>
+            <small data-i18n="paymeDesc">Karta orqali to'lov</small>
+          </div>
+        </button>
+        <button class="payment-btn" id="clickBtn">
+          <span>💳</span>
+          <div>
+            <strong>Click</strong>
+            <small data-i18n="clickDesc">Karta orqali to'lov</small>
+          </div>
+        </button>
+      </div>
+      <div class="payment-info">
+        <p data-i18n="cardInfo">Karta ma'lumotlari:</p>
+        <div class="card-details">
+          <p><strong>9860 0601 1717 0609</strong></p>
+          <p>Abdulhamid Salimov</p>
+        </div>
+        <div class="payment-note-info">
+          <p><span data-i18n="paymentNoteInfo">⚠️ Agar muammo yoki boshqa kamchilik bo'lsa, <a href="tel:+998931155646">+998 93 115 56 46</a> raqamiga qo'ng'iroq qiling.</span></p>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <div class="toast" id="toast"></div>
+  <script src="https://unpkg.com/leaflet@1.9.4/dist/leaflet.js"></script>
+  <script src="script.js"></script>
+</body>
+</html>
